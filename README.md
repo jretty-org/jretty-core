@@ -1,8 +1,8 @@
 # jretty-core
 ```xml
 <dependency>
-  <groupId>org.zollty</groupId>
-  <artifactId>zollty-log</artifactId>
-  <version>2.2.0</version>
+  <groupId>org.jretty</groupId>
+  <artifactId>jretty-core</artifactId>
+  <version>1.2.0</version>
 </dependency>
 ```
