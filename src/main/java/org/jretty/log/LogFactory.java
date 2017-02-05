@@ -38,11 +38,6 @@ public class LogFactory {
     private volatile static LoggerSupport logCreator;
     private static final String LOGFACTORY_CLASS_NAME = LogFactory.class.getName();
 
-    static {
-        LogManager.setThreshold("TRACE");
-    }
-
-    // private constructor prevents instantiation
     private LogFactory() {
     }
 
@@ -173,14 +168,6 @@ public class LogFactory {
                         parentLoggers);
 
             }
-//            else if ("OTHER".equalsIgnoreCase(appenderFlag)) {
-//                String logClassName = pmap.get("appender.OTHER.name");
-//                LogManager.init(logClassName, threshold);
-//            } 
-//            // no appender mapping, so don't refresh it
-//            else {
-//                LogManager.reset(null, threshold, null, parentLoggers);
-//            }
             
             pmap.put("##rootLogger=", threshold + "," + LogManager.getLogName());
             LogManager.storeConfigContent(pmap);
@@ -215,18 +202,16 @@ public class LogFactory {
             if (!refreshed) { // logback > log4j_1.2 > ConsoleLogger
                 try {
                     Class.forName("ch.qos.logback.classic.LoggerContext");
-                    LogManager.refreshLogConfig(LogbackLogger.LOG_NAME, "TRACE");
+                    LogManager.refreshLogConfig(LogbackLogger.LOG_NAME, "OFF");
                     LogUtils.report("WARN: No log Config was found, 'LogbackLogger' will be used and threshold level is 'OFF'.", null);
                 } catch (ClassNotFoundException e) {
-                    // ignore
                     try {
                         Class.forName("org.apache.log4j.helpers.DateLayout");
                         LogManager.refreshLogConfig(Log4jLogger.LOG_NAME, "ALL");
                         LogUtils.report("WARN: No log Config was found, 'Log4jLogger' will be used and threshold level is 'OFF'.", null);
                     } catch (ClassNotFoundException es) {
-                        // ignore
-                        LogManager.refreshLogConfig(ConsoleLogger.LOG_NAME, "OFF");
-                        LogUtils.report("WARN: No log Config was found, 'ConsoleLogger' will be used and threshold level is 'OFF'.", null);
+                        LogManager.refreshLogConfig(ConsoleLogger.LOG_NAME, "TRACE");
+                        LogUtils.report("WARN: No log Config was found, 'ConsoleLogger' will be used and threshold level is 'TRACE'.", null);
                     }
                 }
             }
