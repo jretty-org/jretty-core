@@ -11,6 +11,7 @@
 
 # -----------Maven---------
 target/
+release-dir/jretty-core/target/
 
 # ----------eclipse---------
 *.pydevproject

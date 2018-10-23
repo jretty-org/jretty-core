@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Licensed under the Apache License, Version 2.0 (the "License").
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   Create by Zollty Tsou (Contact: zollty@163.com, http://blog.zollty.com)
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jretty</groupId>
+    <artifactId>jretty</artifactId>
+    <version>1.1</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <artifactId>jretty-core</artifactId>
+  <packaging>jar</packaging>
+  <version>2.0.0</version>
+  <name>jretty-core</name>
+  <description>jretty core lib for java, include jretty-log and jretty-util.</description>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-log</artifactId>
+      <scope>provided</scope>
+      <version>1.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-basic</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-ext</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-zip</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-json</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-match</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-order</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-resource</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-util-web</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <!-- jar-plugin config -->
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+            <manifestEntries>
+              <Built-By>Zollty Tsou</Built-By>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+        
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <createSourcesJar>true</createSourcesJar>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <!--项目开发者列表 -->
+  <developers>
+    <developer>
+      <!--SCM里项目开发者的唯一标识符 -->
+      <id>zollty</id>
+      <!--项目开发者的全名 -->
+      <name>Zollty Tsou</name>
+      <!--项目开发者的email -->
+      <email>zollty@163.com</email>
+      <!--项目开发者的主页的URL -->
+      <url>http://blog.zollty.com</url>
+      <roles>
+        <role>Project Manager</role>
+        <role>Architect</role>
+      </roles>
+      <organization>jretty-org</organization>
+      <organizationUrl>http://www.jretty.org</organizationUrl>
+    </developer>
+  </developers>
+
+
+</project>
