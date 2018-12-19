@@ -18,7 +18,7 @@
   <parent>
     <groupId>org.jretty</groupId>
     <artifactId>jretty</artifactId>
-    <version>1.1</version>
+    <version>21</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>jretty-core</artifactId>
@@ -26,7 +26,14 @@
   <version>2.0.0</version>
   <name>jretty-core</name>
   <description>jretty core lib for java, include jretty-log and jretty-util.</description>
-
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java-version>1.7</java-version>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+  
   <dependencies>
 
     <dependency>
