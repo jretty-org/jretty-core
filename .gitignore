@@ -15,7 +15,7 @@ release-dir/jretty-core/target/
 
 # ----------eclipse---------
 *.pydevproject
-.project
+/release-dir/*/.project
 .metadata
 # --bin/**
 **/tmp/**

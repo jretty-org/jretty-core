@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>jretty</artifactId>
+    <groupId>org.jretty</groupId>
+    <version>21</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>jretty-core</artifactId>
+  <name>jretty-core</name>
+  <version>2.0.0</version>
+  <description>jretty core lib for java, include jretty-log and jretty-util.</description>
+  <developers>
+    <developer>
+      <id>zollty</id>
+      <name>Zollty Tsou</name>
+      <email>zollty@163.com</email>
+      <url>http://blog.zollty.com</url>
+      <organization>jretty-org</organization>
+      <organizationUrl>http://www.jretty.org</organizationUrl>
+      <roles>
+        <role>Project Manager</role>
+        <role>Architect</role>
+      </roles>
+    </developer>
+  </developers>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+            <manifestEntries>
+              <Built-By>Zollty Tsou</Built-By>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <createSourcesJar>true</createSourcesJar>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.jretty</groupId>
+      <artifactId>jretty-log</artifactId>
+      <version>1.2.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <properties>
+    <java-version>1.7</java-version>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+</project>

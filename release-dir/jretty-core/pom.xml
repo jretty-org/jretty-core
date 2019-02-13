@@ -36,6 +36,7 @@
   
   <dependencies>
 
+    <!-- make jretty-log scope provided, don't remove! -->
     <dependency>
       <groupId>org.jretty</groupId>
       <artifactId>jretty-log</artifactId>
@@ -111,7 +112,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.0</version>
+        <!-- <version>3.2.0</version> -->
         <configuration>
           <createSourcesJar>true</createSourcesJar>
         </configuration>
