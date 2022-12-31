@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>jretty-core</artifactId>
   <name>jretty-core</name>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <description>jretty core lib for java, include jretty-log and jretty-util.</description>
   <developers>
     <developer>
