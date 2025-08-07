@@ -50,6 +50,18 @@
       <url>${distMgmtSnapshotsUrl}</url>
     </snapshotRepository>
   </distributionManagement> -->
+  <distributionManagement>
+    <snapshotRepository>
+      <id>paramland-maven-snapshots</id>
+      <name>paramland Nexus Snapshots Repository</name>
+      <url>http://10.10.2.182/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>paramland-maven-releases</id>
+      <name>paramland Nexus releases Repository</name>
+      <url>http://10.10.2.182/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

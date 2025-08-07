@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <parent>
-    <artifactId>jretty</artifactId>
-    <groupId>org.jretty</groupId>
-    <version>21</version>
-  </parent>
   <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jretty</groupId>
   <artifactId>jretty-core</artifactId>
   <name>jretty-core</name>
-  <version>2.0.1</version>
-  <description>jretty core lib for java, include jretty-log and jretty-util.</description>
+  <version>2.0.4</version>
+  <description>jretty core lib for java, include jretty-util and jretty-log.</description>
   <developers>
     <developer>
       <id>zollty</id>
@@ -38,6 +34,36 @@
         </configuration>
       </plugin>
       <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>aggregate-javadoc</id>
+            <phase>package</phase>
+            <goals>
+              <goal>aggregate</goal>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <encoding>UTF-8</encoding>
+              <doclint>none</doclint>
+              <additionalOptions>
+                <additionalOption>-Xdoclint:none</additionalOption>
+              </additionalOptions>
+              <failOnError>false</failOnError>
+              <includeDependencySources>true</includeDependencySources>
+              <dependencySourceIncludes>
+                <include>org.jretty:*</include>
+              </dependencySourceIncludes>
+              <archive>
+                <manifest>
+                  <addClasspath>true</addClasspath>
+                </manifest>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <executions>
           <execution>
@@ -53,17 +79,9 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <groupId>org.jretty</groupId>
-      <artifactId>jretty-log</artifactId>
-      <version>1.2.0</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
   <properties>
-    <java-version>1.7</java-version>
-    <maven.compiler.source>1.7</maven.compiler.source>
+    <java-version>1.8</java-version>
+    <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
